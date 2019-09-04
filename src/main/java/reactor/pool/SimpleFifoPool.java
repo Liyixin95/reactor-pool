@@ -34,7 +34,7 @@ final class SimpleFifoPool<POOLABLE> extends SimplePool<POOLABLE> {
 
     private static final Queue TERMINATED = Queues.empty().get();
 
-    volatile Queue<Borrower<POOLABLE>>                                      pending;
+    private Queue<Borrower<POOLABLE>>                                      pending;
     private static final AtomicReferenceFieldUpdater<SimpleFifoPool, Queue> PENDING = AtomicReferenceFieldUpdater.newUpdater(
             SimpleFifoPool.class, Queue.class, "pending");
 
